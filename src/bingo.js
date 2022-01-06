@@ -36,6 +36,14 @@ const isItCompletedYetM8 = (n) => {
   return false;
 };
 
-readBoard(board);
+let boardResult = readBoard(board);
+
+const updateBoard = (n) => {
+  return boardResult.map(row => {
+    return row.map(col => {
+      return (col === n) ? 'x' :  n;
+    })
+  })
+}
 
 module.exports = {readBoard};
